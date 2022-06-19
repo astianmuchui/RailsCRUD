@@ -1,0 +1,17 @@
+
+<div class=" container well">
+<br>
+<h5 class="text-danger">All posts</h5>
+
+<% @posts.each do |post|%>
+    
+<div class=" well container">
+
+           <h4 class="text-danger"><%= post.title %></h4> 
+            <p> <%= post.body %></p>
+            <%=link_to "Read more" ,post_path(post) ,:class=>'btn btn-danger'%>
+               <br>
+    </div> <br>
+    
+<%end %>
+</div>

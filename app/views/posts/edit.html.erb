@@ -1,0 +1,24 @@
+<br>
+<div class="container">
+<h4 class="text-danger">Edit post</h4>
+<%= form_for :post, url: post_path(@post), method: :patch do |f| %>
+    <%if @post.errors.any? %>
+        <%@post.errors.full_messages.each do |msg|%>
+            <div class="alert alert-danger"><%= msg %></div>
+        <%end%>
+<%end%>        
+<p class="form-group">
+    <%=f.label  :title,({:class => 'text-danger'})%> <br>  
+    <%=f.text_field(:title, {:class =>'form-control'}) %> <br>  
+</p>
+<p class="form-group">
+    <%=f.label :body,({:class => 'text-danger'})%> <br>  
+    <%=f.text_area(:body, {:class =>'form-control'})%> <br>  
+</p>
+<p class="form-group">
+    <%= f.submit ({:class => 'btn btn-danger'}) %> <br>  
+</p>
+<%end%>
+
+</div>
+
